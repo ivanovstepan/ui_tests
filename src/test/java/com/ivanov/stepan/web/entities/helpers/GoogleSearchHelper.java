@@ -8,12 +8,6 @@ public class GoogleSearchHelper extends AbstractHelper {
 
     private final GoogleSearchPage googleSearchPage = new GoogleSearchPage();
 
-    public GoogleSearchHelper navigate() {
-        log.debug("Navigate to google search page");
-        googleSearchPage.navigate();
-        return this;
-    }
-
     public GoogleSearchHelper navigate(String searchValue) {
         log.debug("Navigate to google search page with searchValue - " + searchValue);
         googleSearchPage.navigate(searchValue);

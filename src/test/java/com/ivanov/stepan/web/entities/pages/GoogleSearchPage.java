@@ -14,12 +14,6 @@ public class GoogleSearchPage extends AbstractPage {
     private By googleSearchLinks = By.xpath("//div[@id='search']//div[@class=\"rc\"]/div/a");
     private By googleSearchDescriptions = By.xpath("//div[@id='search']//div[@class=\"rc\"]/div[2]//span/span");
 
-
-    public GoogleSearchPage navigate() {
-        getDriverContainer().getDriver().get(url);
-        return this;
-    }
-
     public GoogleSearchPage navigate(String searchValue) {
         getDriverContainer().getDriver().get(url + searchValue);
         return this;

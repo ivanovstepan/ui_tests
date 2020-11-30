@@ -18,26 +18,29 @@ public class GoogleTests extends BaseWebTest {
     public void logoButtonReturnsToMainPageTest() {
         googleSearchHelper.navigate(RandomUtils.getString())
                 .clickGoogleLogo();
-        assertThat("Google logo doesn't redirect to main page", googleMainHelper.isPageLoaded(), equalTo(true));
+        assertThat("Google logo doesn't redirect to main page",
+                googleMainHelper.isPageLoaded(), equalTo(true));
     }
 
     @Test
     public void inputToolTipIsPresentTest() {
         String inputTitle = googleMainHelper.navigate()
                 .getInputTitle();
-        assertThat("Tooltip for search input is not correct", inputTitle, equalTo("Поиск"));
+        assertThat("Tooltip for search input is incorrect", inputTitle, equalTo("Поиск"));
     }
 
     @Test
     public void correctSearchValueInLinkTest() {
         googleSearchHelper.navigate(SEARCH_VALUE);
-        assertThat("Search value is not present in google results", googleSearchHelper.isSearchValuePresentInLinks(SEARCH_VALUE), equalTo(true));
+        assertThat("Search value is not present in google links",
+                googleSearchHelper.isSearchValuePresentInLinks(SEARCH_VALUE), equalTo(true));
     }
 
     @Test
     public void correctSearchValueInAdditionalTextTest() {
         googleSearchHelper.navigate(SEARCH_VALUE);
-        assertThat("Search value is not present in google results", googleSearchHelper.isSearchValuePresentInDescriptions(SEARCH_VALUE), equalTo(true));
+        assertThat("Search value is not present in google search descriptions",
+                googleSearchHelper.isSearchValuePresentInDescriptions(SEARCH_VALUE), equalTo(true));
     }
 
 }

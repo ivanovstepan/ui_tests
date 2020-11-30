@@ -26,7 +26,7 @@ public class WebDriverManageUtils {
         if (browserName.equals("chrome")) {
             return runChrome();
         } else
-            throw new UnsupportedOperationException("No such browser");
+            throw new UnsupportedOperationException("No such browser: " + browserName);
     }
 
     static WebDriver runChrome() {

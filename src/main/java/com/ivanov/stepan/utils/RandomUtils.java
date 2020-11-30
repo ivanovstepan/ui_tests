@@ -18,10 +18,6 @@ public class RandomUtils {
         return RandomStringUtils.randomAlphabetic(STRING_LENGTH);
     }
 
-    public static String getString(int length) {
-        return RandomStringUtils.randomAlphabetic(length);
-    }
-
     public static int getInt(int maxValue) {
         if (maxValue == 0)
             return 0;
